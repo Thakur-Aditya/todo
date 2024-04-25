@@ -17,7 +17,7 @@ function App() {
   }
 
   function deleteTodo(id) {
-    setTodos((prev) => prev.filter((el) => el.id == !id));
+    setTodos((prev) => prev.filter((el) => el.id !== id));
   }
 
   function toggleComplete(id) {
@@ -56,7 +56,7 @@ function App() {
             {/*Loop and Add TodoItem here */}
             {todos.map((el) => (
               <div key={el.id} className="w-full">
-                <TodoItem todo={el}/>
+                <TodoItem todo={el} />
               </div>
             ))}
           </div>
